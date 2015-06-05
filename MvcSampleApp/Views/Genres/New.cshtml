@@ -1,0 +1,25 @@
+﻿@model MvcSampleApp.Models.GenreViewModel
+
+@{
+    ViewBag.Title = "New Genre";
+}
+
+<h2>New Genre</h2>
+
+@using (Html.BeginForm("New", "Genres", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <div>
+        
+        @Html.LabelFor(m => m.Description)
+        @Html.TextBoxFor(m => m.Description)
+    </div>
+    
+    <input type="submit" value="Save"/>
+}

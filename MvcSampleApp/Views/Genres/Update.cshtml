@@ -1,0 +1,26 @@
+﻿@model MvcSampleApp.Models.GenreViewModel
+
+@{
+    ViewBag.Title = "Update Genre";
+}
+
+<h2>Update Genre</h2>
+
+@using (Html.BeginForm("Update", "Genres", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.GenreId)
+    @Html.ValidationSummary(true);
+    
+    <div>
+        @Html.LabelFor(m => m.Name)       
+        @Html.TextBoxFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Description)
+        @Html.TextBoxFor(m => m.Description)
+    </div>    
+    
+    <input type="submit" value="Save"/>
+}
